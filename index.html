@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de apresentação pessoal">
+  <title>Richard Monteiro | Apresentação</title>
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Arquivo de estilos (pasta css) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ===================== CABEÇALHO / MENU ===================== -->
+  <header class="topo">
+    <a href="#resumo" class="topo-logo">Richard Monteiro</a>
+
+    <!-- Menu com links para as 3 seções da página -->
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#resumo">Quem sou eu</a>
+      <a href="#hobbies">Hobbies e interesses</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== SEÇÃO 1: RESUMO ===================== -->
+    <section id="resumo" class="secao resumo">
+      <div class="resumo-texto">
+        <p class="resumo-ola">Olá, eu sou</p>
+        <h1>Richard Monteiro</h1>
+        <p class="resumo-cargo">Estudante de Programação Frontend</p>
+
+        <p>
+          Estou começando minha jornada no desenvolvimento web e aprendendo
+          HTML, CSS e JavaScript. Gosto de transformar ideias em páginas
+          bonitas, organizadas e fáceis de usar.
+        </p>
+        <p>
+          Esta página é meu primeiro passo para construir um portfólio e
+          me conectar com outras pessoas da área de tecnologia.
+        </p>
+
+        <a href="#contato" class="botao">Fale comigo</a>
+      </div>
+
+      <!-- Foto de perfil (troque img/avatar.svg pela sua foto) -->
+      <img src="img/avatar.png" alt="Foto de perfil" class="resumo-foto" width="320" height="320">
+    </section>
+
+    <!-- ===================== SEÇÃO 2: HOBBIES E INTERESSES ===================== -->
+    <section id="hobbies" class="secao">
+      <h2>Hobbies e interesses</h2>
+      <p class="secao-intro">Algumas das coisas que gosto de fazer quando não estou programando.</p>
+
+      <div class="hobbies">
+
+        <!-- Hobby 1 -->
+        <article class="hobby">
+          <img src="img/hobby-codigo.svg" alt="" width="56" height="56">
+          <h3>Programação</h3>
+          <p>Criar pequenos projetos e aprender algo novo a cada dia.</p>
+        </article>
+
+        <!-- Hobby 2 -->
+        <article class="hobby">
+          <img src="img/hobby-design.svg" alt="" width="56" height="56">
+          <h3>Design</h3>
+          <p>Montar interfaces, escolher cores e buscar referências visuais.</p>
+        </article>
+
+        <!-- Hobby 3 -->
+        <article class="hobby">
+          <img src="img/hobby-musica.svg" alt="" width="56" height="56">
+          <h3>Música</h3>
+          <p>Ouvir música enquanto estudo ajuda a manter o foco.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO 3: FORMULÁRIO DE CONTATO ===================== -->
+    <section id="contato" class="secao">
+      <h2>Contato</h2>
+      <p class="secao-intro">Preencha o formulário. O envio é apenas uma simulação.</p>
+
+      <!-- novalidate: a validação é feita pelo JavaScript (js/script.js) -->
+      <form id="form-contato" class="formulario" novalidate>
+
+        <!-- Campo: nome -->
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          <span class="erro" id="erro-nome"></span>
+        </div>
+
+        <!-- Campo: e-mail -->
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+          <span class="erro" id="erro-email"></span>
+        </div>
+
+        <!-- Campo: mensagem -->
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+          <span class="erro" id="erro-mensagem"></span>
+        </div>
+
+        <button type="submit" class="botao">Enviar mensagem</button>
+
+        <!-- Mensagem de sucesso (aparece após a validação) -->
+        <p class="sucesso" id="mensagem-sucesso" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <p>&copy; 2026 Seu Nome. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Arquivo de JavaScript (pasta js) -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

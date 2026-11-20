@@ -1,0 +1,316 @@
+/* ==========================================================
+   RESET E VARIÁVEIS
+   ========================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fundo: #eef0ff;
+  --tinta: #1b1340;
+  --tinta-suave: #4a4570;
+  --destaque: #ff5d73;
+  --destaque-escuro: #e0405a;
+  --card: #ffffff;
+  --borda: #d6d9f5;
+  --erro: #c62839;
+  --sucesso: #1f8a5b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* evita que o menu fixo cubra o título da seção */
+}
+
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--tinta);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================
+   CABEÇALHO / MENU
+   ========================================================== */
+.topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: var(--tinta);
+}
+
+.topo-logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  border-bottom-color: var(--destaque);
+}
+
+/* ==========================================================
+   ESTRUTURA GERAL DAS SEÇÕES
+   ========================================================== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.secao {
+  padding: 80px 0 40px;
+}
+
+.secao h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.secao-intro {
+  color: var(--tinta-suave);
+  margin-bottom: 28px;
+}
+
+/* ==========================================================
+   SEÇÃO 1: RESUMO
+   ========================================================== */
+.resumo {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 130px;
+}
+
+.resumo-ola {
+  color: var(--destaque-escuro);
+  font-weight: 700;
+}
+
+.resumo h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.9rem;
+  line-height: 1.1;
+  margin: 4px 0 8px;
+}
+
+.resumo-cargo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--tinta-suave);
+  margin-bottom: 16px;
+}
+
+.resumo-texto p {
+  margin-bottom: 12px;
+  max-width: 55ch;
+}
+
+.resumo-foto {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  justify-self: center;
+  border-radius: 50%;
+  border: 6px solid var(--destaque);
+}
+
+/* ==========================================================
+   BOTÕES
+   ========================================================== */
+.botao {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 26px;
+  background: var(--destaque);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background: var(--destaque-escuro);
+}
+
+/* ==========================================================
+   SEÇÃO 2: HOBBIES E INTERESSES
+   ========================================================== */
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.hobby {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.hobby img {
+  margin-bottom: 12px;
+}
+
+.hobby h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.hobby p {
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   SEÇÃO 3: FORMULÁRIO
+   ========================================================== */
+.formulario {
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--tinta);
+  border: 2px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--tinta);
+}
+
+/* Classe aplicada pelo JavaScript quando o campo tem erro */
+.campo.invalido input,
+.campo.invalido textarea {
+  border-color: var(--erro);
+}
+
+.erro {
+  display: block;
+  min-height: 1.2em;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--erro);
+}
+
+.sucesso {
+  margin-top: 14px;
+  font-weight: 700;
+  color: var(--sucesso);
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+.rodape {
+  margin-top: 60px;
+  padding: 24px;
+  text-align: center;
+  background: var(--tinta);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+
+  .menu {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  .resumo {
+    grid-template-columns: 1fr;
+    padding-top: 150px;
+    text-align: center;
+  }
+
+  .resumo-texto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resumo-foto {
+    order: -1;
+    max-width: 220px;
+  }
+
+  .resumo h1 {
+    font-size: 2.2rem;
+  }
+
+  .hobbies {
+    grid-template-columns: 1fr;
+  }
+}
